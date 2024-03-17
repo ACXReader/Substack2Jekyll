@@ -150,8 +150,11 @@ class BaseSubstackScraper(ABC):
 
         # jekyll front matter
         metadata = "---\n"
+        # very annoying!!!
+        title = title.replace("\"", "\\\"")
         metadata += f"title: \"{title}\"\n"
         if subtitle:
+            subtitle = subtitle.replace("\"", "\\\"")
             metadata += f"subtitle: \"{subtitle}\"\n"
         metadata += f"date: {date}\n"
         metadata += f"likes: {like_count}\n"

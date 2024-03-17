@@ -4,6 +4,7 @@ import os
 from abc import ABC, abstractmethod
 from typing import List, Optional, Tuple
 from time import sleep
+import sys
 
 from bs4 import BeautifulSoup
 import html2text
@@ -197,6 +198,10 @@ class BaseSubstackScraper(ABC):
         """
         Iterates over all posts and saves them as markdown files
         """
+        # if no new posts
+        if len(self.post_urls) == 0:
+            # error signal to stop github actions
+            sys.exit(1)
         count = 0
         total = num_posts_to_scrape if num_posts_to_scrape != 0 else len(
             self.post_urls)

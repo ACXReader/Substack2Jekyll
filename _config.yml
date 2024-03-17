@@ -1,0 +1,6 @@
+title: Substack2Markdown
+url: https://acxreader.github.io/Substack2Markdown
+
+permalink: /p/:title
+
+theme: minima

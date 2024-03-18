@@ -1,4 +1,4 @@
-name: Check ACX for new posts and update site
+name: Check substack for new posts and update site
 
 on:
   # Runs on pushes targeting the default branch
@@ -24,7 +24,7 @@ jobs:
       - name: Install python deps
         run: pip install -r requirements.txt
       - name: Run scraper
-        run: python substack_scraper.py --url https://www.astralcodexten.com
+        run: python substack_scraper.py --url YOUR_SITE_HERE
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5.0.0
   redeploy:

@@ -24,8 +24,13 @@ jobs:
       - name: Install python deps
         run: pip install -r requirements.txt
       - name: Run scraper
-        run: python substack_scraper.py --url YOUR_SITE_HERE
+        run: python substack_scraper.py --url https://www.astralcodexten.com
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5.0.0
-      - name: Redeploy site
-        uses: ./.github/workflows/jekyll-gh-pages.yml
+  redeploy:
+    needs: update
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/jekyll-gh-pages.yml

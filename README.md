@@ -1,5 +1,7 @@
 ﻿# Substack2Jekyll
 
+## This repo is very outdated, will fix
+
 A fork of Substack2Markdown for github pages. Allows github actions to update the site on an interval.
 
 How to use:
